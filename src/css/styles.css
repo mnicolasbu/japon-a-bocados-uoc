@@ -1,0 +1,373 @@
+/* Estilos Base y Accesibilidad */
+.skip-link {
+  position: absolute;
+  top: -100px; /* Ocultar fuera de pantalla por defecto */
+  left: 10px;
+  background-color: #8e281e; /* Contraste que cumple con las WCAG AA */
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 0 0 6px 6px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: top 0.2s ease-in-out; 
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #ffffff;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+  background-color: #fff;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Cabecera y Navegación */
+.site-header {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1rem;
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.site-logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.site-logo:hover,
+.site-logo:focus {
+  background-color: #2a2a2a;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-nav a,
+.dropdown-toggle {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav > ul > li > a:hover,
+.main-nav > ul > li > a:focus,
+.dropdown-toggle:hover,
+.dropdown-toggle:focus,
+.main-nav .dropdown:hover > .dropdown-toggle {
+  background-color: #333333;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Menú Desplegable (Dropdown) */
+.main-nav .dropdown {
+  position: relative;
+}
+
+.main-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #262626;
+  border: 1px solid #3d3d3d;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  min-width: 170px;
+  flex-direction: column;
+  gap: 0;
+  padding: 6px 0;
+  z-index: 10;
+  margin-top: 4px;
+}
+
+.main-nav .dropdown-menu li {
+  width: 100%;
+}
+
+.main-nav .dropdown-menu li a {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #e0e0e0;
+  border-radius: 0;
+}
+
+.main-nav .dropdown-menu li a:hover,
+.main-nav .dropdown-menu li a:focus {
+  background-color: #8e281e; /* Contraste que cumple con las WCAG AA */
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* 
+  El menú solamente se despliega cuando se hace click sobre RECETAS. 
+  Además, permite que al clicar con la tecla ESCAPE se pueda salir del menú desplegable.
+*/
+.main-nav .dropdown-menu.is-open {
+  display: flex;
+}
+
+/* Se navega con el TABULADOR por teclado */
+.main-nav a:focus-visible,
+.dropdown-toggle:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Alineación de iconos Feather */
+.feather {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  vertical-align: middle;
+}
+
+/* Estilos específicos del INDEX */
+.hero-banner {
+  background: #f4f4f4;
+  padding: 2.5rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-left: 5px solid #c0392b;
+}
+
+.hero-banner h1 {
+  margin-top: 0;
+  font-size: 2.2rem;
+}
+
+.featured-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.featured-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.featured-row-img {
+  width: 45%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.featured-row-content {
+  padding: 1.5rem;
+  width: 55%;
+}
+
+@media (max-width: 768px) {
+  .featured-row,
+  .featured-row:nth-child(even) {
+    flex-direction: column;
+  }
+  .featured-row-img,
+  .featured-row-content {
+    width: 100%;
+  }
+}
+
+/* Tarjetas */
+.cards-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #c0392b;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #8e281e;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #666;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Páginas de Detalle */
+.hero-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin: 1.5rem 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.gallery-grid figure,
+.hero-image {
+  margin: 0;
+}
+
+.gallery-grid figcaption,
+.hero-image figcaption {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Páginas de Enlaces y Tablas */
+.section-box {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #eee;
+}
+
+/* Pie de Página */
+.site-footer {
+  background-color: #1a1a1a;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}

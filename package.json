@@ -1,0 +1,32 @@
+{
+  "name": "p1_html_y_css_i",
+  "version": "1.0.0",
+  "description": "Proyecto Japón a Bocados",
+  "license": "ISC",
+  "author": "Manuel Nicolás Budesca",
+  "type": "commonjs",
+  "browserslist": "last 10 years",
+  "targets": {
+    "default": {
+      "context": "browser"
+    }
+  },
+  "scripts": {
+    "dev:parcel": "parcel src/*.html",
+    "prod:parcel": "parcel build src/*.html --no-cache",
+    "clean": "rimraf dist .parcel-cache",
+    "copy:redirects": "npx copyfiles -u 1 src/_redirects dist",
+    "start": "npm-run-all -s clean dev:parcel",
+    "build": "npm-run-all -s clean prod:parcel copy:redirects"
+  },
+  "dependencies": {
+    "feather-icons": "^4.29.2"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.16.4",
+    "posthtml-include": "^2.0.1",
+    "rimraf": "^6.1.3"
+  }
+}
