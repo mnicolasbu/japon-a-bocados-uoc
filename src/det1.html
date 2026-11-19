@@ -18,7 +18,26 @@
         <p class="subtitle">De dónde viene, los tipos de caldo que existen y la forma tradicional de comerlo.</p>
         
         <figure class="hero-image">
-          <img src="./img/ramen-principal.jpg" alt="Un cuenco de ramen recién servido con huevo y verdura">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="./img/ramen-principal.jpg?as=avif&width=480 480w,
+                      ./img/ramen-principal.jpg?as=avif&width=600 600w"
+              sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)">
+            <source
+              type="image/webp"
+              srcset="./img/ramen-principal.jpg?as=webp&width=480 480w,
+                      ./img/ramen-principal.jpg?as=webp&width=600 600w"
+              sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)">
+            <img
+              src="./img/ramen-principal.jpg?as=jpeg&width=600"
+              srcset="./img/ramen-principal.jpg?as=jpeg&width=480 480w,
+                      ./img/ramen-principal.jpg?as=jpeg&width=600 600w"
+              sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)"
+              width="600" height="600"
+              alt="Un cuenco de ramen recién servido con huevo y verdura"
+              fetchpriority="high">
+          </picture>
           <figcaption>Un plato de ramen bien caliente listo para comer.</figcaption>
         </figure>
       </header>
@@ -35,15 +54,53 @@
         <h2>Imágenes del plato</h2>
         <div class="gallery-grid">
           <figure>
-            <img src="./img/ramen-galeria1.jpg" alt="Fideos de ramen levantados con palillos">
+            <picture>
+              <source type="image/avif"
+                srcset="./img/ramen-galeria1.jpg?as=avif&width=400 400w, ./img/ramen-galeria1.jpg?as=avif&width=800 800w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)">
+              <source type="image/webp"
+                srcset="./img/ramen-galeria1.jpg?as=webp&width=400 400w, ./img/ramen-galeria1.jpg?as=webp&width=800 800w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)">
+              <img src="./img/ramen-galeria1.jpg?as=jpeg&width=400"
+                srcset="./img/ramen-galeria1.jpg?as=jpeg&width=400 400w, ./img/ramen-galeria1.jpg?as=jpeg&width=800 800w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)"
+                width="800" height="400" loading="lazy" decoding="async"
+                alt="Fideos de ramen levantados con palillos">
+            </picture>
             <figcaption>Fideos servidos con huevo y brotes de soja.</figcaption>
           </figure>
+
           <figure>
-            <img src="./img/ramen-galeria2.jpg" alt="Detalle del caldo de ramen con guindilla y toppings">
+            <picture>
+              <source type="image/avif"
+                srcset="./img/ramen-galeria2.jpg?as=avif&width=400 400w, ./img/ramen-galeria2.jpg?as=avif&width=800 800w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)">
+              <source type="image/webp"
+                srcset="./img/ramen-galeria2.jpg?as=webp&width=400 400w, ./img/ramen-galeria2.jpg?as=webp&width=800 800w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)">
+              <img src="./img/ramen-galeria2.jpg?as=jpeg&width=400"
+                srcset="./img/ramen-galeria2.jpg?as=jpeg&width=400 400w, ./img/ramen-galeria2.jpg?as=jpeg&width=800 800w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)"
+                width="800" height="400" loading="lazy" decoding="async"
+                alt="Detalle del caldo de ramen con guindilla y toppings">
+            </picture>
             <figcaption>El caldo es la parte con más sabor del plato.</figcaption>
           </figure>
+
           <figure>
-            <img src="./img/ramen-galeria3.jpg" alt="Cuenco de ramen servido en una barra de restaurante">
+            <picture>
+              <source type="image/avif"
+                srcset="./img/ramen-galeria3.jpg?as=avif&width=400 400w, ./img/ramen-galeria3.jpg?as=avif&width=600 600w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)">
+              <source type="image/webp"
+                srcset="./img/ramen-galeria3.jpg?as=webp&width=400 400w, ./img/ramen-galeria3.jpg?as=webp&width=600 600w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)">
+              <img src="./img/ramen-galeria3.jpg?as=jpeg&width=400"
+                srcset="./img/ramen-galeria3.jpg?as=jpeg&width=400 400w, ./img/ramen-galeria3.jpg?as=jpeg&width=600 600w"
+                sizes="(min-width: 1100px) 341px, (min-width: 828px) calc((100vw - 78px) / 3), (min-width: 563px) calc((100vw - 63px) / 2), calc(100vw - 48px)"
+                width="600" height="400" loading="lazy" decoding="async"
+                alt="Cuenco de ramen servido en una barra de restaurante">
+            </picture>
             <figcaption>Un cuenco de ramen servido en la barra.</figcaption>
           </figure>
         </div>

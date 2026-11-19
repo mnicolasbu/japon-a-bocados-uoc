@@ -23,7 +23,19 @@
       <h2>Platos destacados</h2>
 
       <article class="featured-row">
-        <img src="./img/ramen-principal.jpg" alt="Cuenco de ramen con fideos y huevo" class="featured-row-img">
+        <picture>
+          <source type="image/avif"
+            srcset="./img/ramen-principal.jpg?as=avif&width=480 480w, ./img/ramen-principal.jpg?as=avif&width=600 600w"
+            sizes="(min-width: 1100px) 473px, (min-width: 769px) calc((100vw - 48px) * 0.45), calc(100vw - 48px)">
+          <source type="image/webp"
+            srcset="./img/ramen-principal.jpg?as=webp&width=480 480w, ./img/ramen-principal.jpg?as=webp&width=600 600w"
+            sizes="(min-width: 1100px) 473px, (min-width: 769px) calc((100vw - 48px) * 0.45), calc(100vw - 48px)">
+          <img src="./img/ramen-principal.jpg?as=jpeg&width=600"
+            srcset="./img/ramen-principal.jpg?as=jpeg&width=480 480w, ./img/ramen-principal.jpg?as=jpeg&width=600 600w"
+            sizes="(min-width: 1100px) 473px, (min-width: 769px) calc((100vw - 48px) * 0.45), calc(100vw - 48px)"
+            width="600" height="600" decoding="async"
+            alt="Cuenco de ramen con fideos y huevo" class="featured-row-img">
+        </picture>
         <div class="featured-row-content">
           <h3>Ramen</h3>
           <p>Es mucho más que una sopa de fideos. Dependiendo de la ciudad donde lo pruebes, el caldo cambia por completo: los hay de cerdo, de soja, etc.</p>
@@ -32,7 +44,19 @@
       </article>
 
       <article class="featured-row">
-        <img src="./img/sushi-principal.jpg" alt="Tabla con piezas de sushi" class="featured-row-img">
+        <picture>
+          <source type="image/avif"
+            srcset="./img/sushi-principal.jpg?as=avif&width=480 480w, ./img/sushi-principal.jpg?as=avif&width=800 800w"
+            sizes="(min-width: 1100px) 473px, (min-width: 769px) calc((100vw - 48px) * 0.45), calc(100vw - 48px)">
+          <source type="image/webp"
+            srcset="./img/sushi-principal.jpg?as=webp&width=480 480w, ./img/sushi-principal.jpg?as=webp&width=800 800w"
+            sizes="(min-width: 1100px) 473px, (min-width: 769px) calc((100vw - 48px) * 0.45), calc(100vw - 48px)">
+          <img src="./img/sushi-principal.jpg?as=jpeg&width=800"
+            srcset="./img/sushi-principal.jpg?as=jpeg&width=480 480w, ./img/sushi-principal.jpg?as=jpeg&width=800 800w"
+            sizes="(min-width: 1100px) 473px, (min-width: 769px) calc((100vw - 48px) * 0.45), calc(100vw - 48px)"
+            width="800" height="600" loading="lazy" decoding="async"
+            alt="Tabla con piezas de sushi" class="featured-row-img">
+        </picture>
         <div class="featured-row-content">
           <h3>Sushi</h3>
           <p>Nació hace siglos como una forma de conservar el pescado y hoy es la comida japonesa más famosa del mundo. La clave está en cómo se prepara el arroz y el corte de los pescados.</p>
