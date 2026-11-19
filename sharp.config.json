@@ -1,0 +1,5 @@
+{
+  "jpeg": { "quality": 75, "mozjpeg": true },
+  "webp": { "quality": 75 },
+  "avif": { "quality": 50 }
+}
