@@ -58,7 +58,7 @@ main {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 15px;
   padding: 6px 10px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
@@ -67,6 +67,13 @@ main {
 .site-logo:hover,
 .site-logo:focus {
   background-color: #2a2a2a;
+}
+
+.site-logo-img {
+  display: block;
+  width: 28px;
+  height: 32px;
+  filter: invert(1);
 }
 
 .main-nav ul {
@@ -191,6 +198,7 @@ main {
   display: flex;
   gap: 20px;
   align-items: stretch;
+  min-height: 250px;
   margin-bottom: 2rem;
   background: #fff;
   border: 1px solid #eee;
@@ -203,15 +211,17 @@ main {
 }
 
 .featured-row picture {
-  display: flex;
+  display: block;
+  position: relative;
   width: 45%;
   flex-shrink: 0;
 }
 
 .featured-row-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  min-height: 250px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -224,7 +234,7 @@ main {
   align-items: flex-start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .featured-row,
   .featured-row:nth-child(even) {
     flex-direction: column;
@@ -234,7 +244,7 @@ main {
     width: 100%;
   }
   .featured-row picture {
-  height: 250px;
+    height: 250px;
   }
 }
 
@@ -302,10 +312,28 @@ main {
 
 /* Páginas de Detalle */
 .hero-image img {
+  display: block;
   width: 100%;
-  max-height: 400px;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.hero-image--compact img {
+  aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 768px) {
+  .hero-image img {
+    aspect-ratio: 12 / 5;
+  }
+  .hero-image--compact {
+    max-width: 600px;
+  }
+  .hero-image--compact img {
+    aspect-ratio: 3 / 2;
+  }
 }
 
 .gallery-grid {
@@ -389,4 +417,76 @@ th {
   padding: 1rem;
   margin-top: 2rem;
   font-size: 0.9rem;
+}
+
+/* Vapor animado */
+.steam {
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+.steam-line {
+  fill: none;
+  stroke: #c0392b;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  opacity: 0.7;
+  animation: steam-rise 3s ease-in-out 3;
+}
+
+.steam-2 { animation-delay: 0.5s; }
+.steam-3 { animation-delay: 1s; }
+
+@keyframes steam-rise {
+  0%   { stroke-dashoffset: 120; opacity: 0; }
+  40%  { opacity: 0.8; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* Clip-path decorativo en el banner */
+.hero-banner {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 0 100%);
+  padding-bottom: calc(2.5rem + 20px);
+}
+
+/* Transiciones en elementos interactivos */
+.btn,
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Accesibilidad: sin movimiento si el usuario lo pide */
+@media (prefers-reduced-motion: reduce) {
+  .steam-line {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+  .btn,
+  .card,
+  .skip-link,
+  .site-logo,
+  .main-nav a,
+  .dropdown-toggle {
+    transition: none;
+  }
+  .btn:hover,
+  .btn:focus-visible,
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
 }

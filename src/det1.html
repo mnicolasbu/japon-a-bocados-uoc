@@ -16,24 +16,36 @@
       <header class="detail-header">
         <h1>El Ramen</h1>
         <p class="subtitle">De dónde viene, los tipos de caldo que existen y la forma tradicional de comerlo.</p>
-        
-        <figure class="hero-image">
+        <figure class="hero-image hero-image--compact">
           <picture>
-            <source
-              type="image/avif"
-              srcset="./img/ramen-principal.jpg?as=avif&width=480 480w,
-                      ./img/ramen-principal.jpg?as=avif&width=600 600w"
-              sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)">
-            <source
-              type="image/webp"
-              srcset="./img/ramen-principal.jpg?as=webp&width=480 480w,
-                      ./img/ramen-principal.jpg?as=webp&width=600 600w"
-              sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)">
+            <!-- ≥768px: recorte 3:2 -->
+            <source media="(min-width: 768px)" type="image/avif"
+              srcset="./img/ramen-principal.jpg?as=avif&width=480&height=320 480w,
+                      ./img/ramen-principal.jpg?as=avif&width=600&height=400 600w"
+              sizes="600px">
+            <source media="(min-width: 768px)" type="image/webp"
+              srcset="./img/ramen-principal.jpg?as=webp&width=480&height=320 480w,
+                      ./img/ramen-principal.jpg?as=webp&width=600&height=400 600w"
+              sizes="600px">
+            <source media="(min-width: 768px)" type="image/jpeg"
+              srcset="./img/ramen-principal.jpg?as=jpeg&width=480&height=320 480w,
+                      ./img/ramen-principal.jpg?as=jpeg&width=600&height=400 600w"
+              sizes="600px">
+
+            <!-- <768px: cuadrado 1:1 -->
+            <source type="image/avif"
+              srcset="./img/ramen-principal.jpg?as=avif&width=480&height=480 480w,
+                      ./img/ramen-principal.jpg?as=avif&width=600&height=600 600w"
+              sizes="calc(100vw - 48px)">
+            <source type="image/webp"
+              srcset="./img/ramen-principal.jpg?as=webp&width=480&height=480 480w,
+                      ./img/ramen-principal.jpg?as=webp&width=600&height=600 600w"
+              sizes="calc(100vw - 48px)">
             <img
-              src="./img/ramen-principal.jpg?as=jpeg&width=600"
-              srcset="./img/ramen-principal.jpg?as=jpeg&width=480 480w,
-                      ./img/ramen-principal.jpg?as=jpeg&width=600 600w"
-              sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)"
+              src="./img/ramen-principal.jpg?as=jpeg&width=600&height=600"
+              srcset="./img/ramen-principal.jpg?as=jpeg&width=480&height=480 480w,
+                      ./img/ramen-principal.jpg?as=jpeg&width=600&height=600 600w"
+              sizes="calc(100vw - 48px)"
               width="600" height="600"
               alt="Un cuenco de ramen recién servido con huevo y verdura"
               fetchpriority="high">

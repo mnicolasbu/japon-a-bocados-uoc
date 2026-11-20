@@ -16,29 +16,38 @@
       <header class="detail-header">
         <h1>El Sushi</h1>
         <p class="subtitle">Variedades principales y consejos prácticos para degustarlo.</p>
-        
         <figure class="hero-image">
           <picture>
-            <source
-              type="image/avif"
-              srcset="./img/sushi-principal.jpg?as=avif&width=480 480w,
-                      ./img/sushi-principal.jpg?as=avif&width=800 800w,
-                      ./img/sushi-principal.jpg?as=avif&width=1200 1200w"
+            <!-- Escritorio/tablet (≥768px): recorte panorámico 12:5 -->
+            <source media="(min-width: 768px)" type="image/avif"
+              srcset="./img/sushi-principal.jpg?as=avif&width=800&height=333 800w,
+                      ./img/sushi-principal.jpg?as=avif&width=1200&height=500 1200w"
               sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)">
-            <source
-              type="image/webp"
-              srcset="./img/sushi-principal.jpg?as=webp&width=480 480w,
-                      ./img/sushi-principal.jpg?as=webp&width=800 800w,
-                      ./img/sushi-principal.jpg?as=webp&width=1200 1200w"
+            <source media="(min-width: 768px)" type="image/webp"
+              srcset="./img/sushi-principal.jpg?as=webp&width=800&height=333 800w,
+                      ./img/sushi-principal.jpg?as=webp&width=1200&height=500 1200w"
               sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)">
+            <source media="(min-width: 768px)" type="image/jpeg"
+              srcset="./img/sushi-principal.jpg?as=jpeg&width=800&height=333 800w,
+                      ./img/sushi-principal.jpg?as=jpeg&width=1200&height=500 1200w"
+              sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)">
+
+            <!-- Móvil (<768px): recorte vertical 4:5 -->
+            <source type="image/avif"
+              srcset="./img/sushi-principal.jpg?as=avif&width=480&height=600 480w,
+                      ./img/sushi-principal.jpg?as=avif&width=720&height=900 720w"
+              sizes="calc(100vw - 48px)">
+            <source type="image/webp"
+              srcset="./img/sushi-principal.jpg?as=webp&width=480&height=600 480w,
+                      ./img/sushi-principal.jpg?as=webp&width=720&height=900 720w"
+              sizes="calc(100vw - 48px)">
             <img
-              src="./img/sushi-principal.jpg?as=jpeg&width=800"
-              srcset="./img/sushi-principal.jpg?as=jpeg&width=480 480w,
-                      ./img/sushi-principal.jpg?as=jpeg&width=800 800w,
-                      ./img/sushi-principal.jpg?as=jpeg&width=1200 1200w"
-              sizes="(min-width: 1100px) 1052px, calc(100vw - 48px)"
-              width="1200" height="800"
-              alt="Varias piezas de sushi dispuestas sobre tabla de madera"
+              src="./img/sushi-principal.jpg?as=jpeg&width=480&height=600"
+              srcset="./img/sushi-principal.jpg?as=jpeg&width=480&height=600 480w,
+                      ./img/sushi-principal.jpg?as=jpeg&width=720&height=900 720w"
+              sizes="calc(100vw - 48px)"
+              width="480" height="600"
+              alt="Piezas de nigiris de salmón y pescado blanco"
               fetchpriority="high">
           </picture>
           <figcaption>Tabla con piezas de sushi recién preparadas.</figcaption>
