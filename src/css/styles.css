@@ -433,7 +433,7 @@ th {
   stroke-dasharray: 120;
   stroke-dashoffset: 120;
   opacity: 0.7;
-  animation: steam-rise 3s ease-in-out 3;
+  animation: steam-rise 1.8s ease-in-out 2;
 }
 
 .steam-2 { animation-delay: 0.5s; }
@@ -447,8 +447,15 @@ th {
 
 /* Clip-path decorativo en el banner */
 .hero-banner {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 0 100%);
-  padding-bottom: calc(2.5rem + 20px);
+  clip-path: polygon(
+    0 0, 100% 0,
+    100% calc(100% - 25px),
+    90% 100%, 75% calc(100% - 15px),
+    60% 100%, 50% calc(100% - 15px),
+    40% 100%, 25% calc(100% - 15px),
+    10% 100%, 0 calc(100% - 25px)
+  );
+  padding-bottom: calc(2.5rem + 12px);
 }
 
 /* Transiciones en elementos interactivos */
